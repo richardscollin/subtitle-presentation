@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>OCR Extension</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/custom.css" id="theme">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides" >
+        <section >
+          <h3>Chinese Subtitle OCR Extension - 子目OCR</h3>
+          <h4>Collin Richards</h4>
+        </section>
+
+        <section>
+          <h3>問題 Problem</h3>
+
+          <ul>
+            <li>我最近找到一個很有用的Extension叫Language Learning with Youtube</li>
+            <li>My current tool does not support subtitles embedded within the video</li>
+          </ul>
+
+          <div style="display: flex; justify-content: start;">
+            <div width="50%"><img src="goal-crop.png" width="100%" alt="Language Learning with Youtube UI"></div>
+            <div width="50%"><img src="news-story.png" width="100%" alt="News Story"></div>
+          </div>
+        </section>
+
+        <section>
+          <h3>Current Prototype</h3>
+
+          <div style="display: flex; justify-content: start;">
+            <div style="width: 30%;">
+              <ul>
+                <li>Uses Tesseract.js (wasm) </li>
+                <li>Performance is Bad</li>
+                <ol>
+                  <li>Speed (3 Seconds Latency)</li>
+                  <li>Accuracy</li>
+                </ol>
+                <li>Ideas for Improvement</li>
+                <ol>
+                  <li>Retrain Tesseract Model</li>
+                  <li>Completely new toolchain</li>
+                </ol>
+                <div class="fragment">
+                  <li>Tasks</li>
+                  <ul>
+                    <li>Find a dataset or ...</li>
+                    <li>Generate a dataset from images and fonts</li>
+                    <li>Research tools for segmenting Chinese text</li>
+                    <li>Research tools for dictionary searches (MoE Dict?)</li>
+                  </ul>
+                </div>
+              </ul>
+              </ul>
+            </div>
+
+            <div style="width: 70%;">
+              <video src="example.mp4" controls></video>
+            </div>
+          </div>
+        </section>
+        <section>
+          <h3>Research</h3>
+          <ul>
+            <li>Jieba - 结巴</li>
+            <li>https://github.com/fxsjy/jieba</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
+        controls: false,
+        margin: 0.02,
+        center:false,
+        width: 1920,
+        height: 1080,
+
+        plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
